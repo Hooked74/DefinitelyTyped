@@ -1,0 +1,25 @@
+{
+  "name": "DefinitelyTyped",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hooked74/DefinitelyTyped.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hooked74/DefinitelyTyped/issues"
+  },
+  "homepage": "https://github.com/Hooked74/DefinitelyTyped#readme",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "prettier": "^1.18.2",
+    "simple-output": "^2.0.0"
+  }
+}
