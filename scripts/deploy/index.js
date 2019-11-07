@@ -6,5 +6,5 @@
 // 6. отправить в npm
 
 (function main() {
-  console.log(process.env.RANGE, process.env.COMMIT);
+  console.log([process.env.RANGE, process.env.COMMIT]);
 })();
