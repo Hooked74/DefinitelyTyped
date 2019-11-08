@@ -1,4 +1,6 @@
 // General type definitions
+// Definitions by: Igor Novikov <https://github.com/hooked74>
+
 /// <reference types="node" />
 
 declare type int = number;
