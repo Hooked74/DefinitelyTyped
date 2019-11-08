@@ -7,7 +7,6 @@ const { readFileSync } = require("fs");
 new (class DeployManager {
   constructor() {
     if (process.env.RANGE) {
-      console.log(process.env.NODE_ENV);
       try {
         const typePaths = this.getTypePaths();
         if (typePaths.size) {
