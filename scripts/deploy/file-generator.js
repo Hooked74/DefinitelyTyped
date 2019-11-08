@@ -28,7 +28,6 @@ module.exports = class FileGenerator {
 
   generateNpmrc() {
     this._generate({
-      token: process.env.TOKEN,
       fileName: ".npmrc"
     });
   }
