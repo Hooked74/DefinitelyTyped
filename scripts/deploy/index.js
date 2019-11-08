@@ -46,13 +46,13 @@ new (class DeployManager {
   }
 
   getTypePaths() {
-    const files = execSync(`git diff --name-only ${process.env.RANGE}`)
+    const files = execSync(`git diff --name-status ${process.env.RANGE}`)
       .toString()
       .split("\n");
     const typeDirs = new Set();
     for (const file of files) {
-      if (/^types/.test(file)) {
-        typeDirs.add(file.replace(/(?<=types\/.+?)\/.*$/, ""));
+      if (file[0] !== "D" && /^\w\ttypes/.test(file)) {
+        typeDirs.add(file.slice(2).replace(/(?<=types\/.+?)\/.*$/, ""));
       }
     }
 
