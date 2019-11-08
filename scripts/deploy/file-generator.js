@@ -41,7 +41,7 @@ module.exports = class FileGenerator {
       flow(
         this._replace.bind(this, data),
         this._format.bind(this, data.fileName)
-      )(readFileSync(resolve(__dirname, `/templates/${data.fileName}`)).toString())
+      )(readFileSync(resolve(__dirname, `templates/${data.fileName}`)).toString())
     );
     info(`${data.fileName} file created in ${this.outPath}`);
   }
