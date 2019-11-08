@@ -28,7 +28,7 @@ new (class DeployManager {
   }
 
   publish(outPath) {
-    const spawnProcess = spawnSync("npm", ["publish", outPath], { stdio: "inherit", cwd });
+    const spawnProcess = spawnSync("npm", ["publish", outPath], { stdio: "inherit", cwd: outPath });
     if (spawnProcess.error) throw spawnProcess.error;
   }
 

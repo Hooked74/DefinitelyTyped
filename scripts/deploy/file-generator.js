@@ -1,8 +1,6 @@
 const { readFileSync, writeFileSync } = require("fs");
 const { resolve, basename, join } = require("path");
 const template = require("lodash/template");
-const prettier = require("prettier");
-const flow = require("lodash/flow");
 const { warn, info } = require("simple-output");
 
 module.exports = class FileGenerator {
@@ -38,10 +36,7 @@ module.exports = class FileGenerator {
   _generate(data) {
     writeFileSync(
       join(this.outPath, data.fileName),
-      flow(
-        this._replace.bind(this, data),
-        this._format.bind(this, data.fileName)
-      )(readFileSync(resolve(__dirname, `templates/${data.fileName}`)).toString())
+      this._replace(data, readFileSync(resolve(__dirname, `templates/${data.fileName}`)).toString())
     );
     info(`${data.fileName} file created in ${this.outPath}`);
   }
@@ -52,15 +47,6 @@ module.exports = class FileGenerator {
         .filter(dep => /^(@types|@h74-types\/)/.test(dep))
         .join(", ") || "none"
     );
-  }
-
-  _format(fileName, content) {
-    try {
-      return prettier.format(content, { printWidth: 100, filepath: fileName });
-    } catch (e) {
-      warn(e);
-      return content;
-    }
   }
 
   _replace(data, content) {
