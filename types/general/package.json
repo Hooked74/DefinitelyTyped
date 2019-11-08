@@ -1,0 +1,29 @@
+{
+  "name": "@h74-types/general",
+  "version": "1.0.0",
+  "description": "General TypeScript Definitions",
+  "files": [
+    "index.d.ts"
+  ],
+  "author": "Igor Novikov <novikovio74@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "main": "",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hooked74/DefinitelyTyped.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hooked74/DefinitelyTyped/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@types/node": "*"
+  }
+}
