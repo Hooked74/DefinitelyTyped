@@ -11,7 +11,7 @@ new (class DeployManager {
         if (typePaths.size) {
           info(`The following types were found: ${[...typePaths].join(", ")}`);
           for (const typePath of typePaths) {
-            const outPath = this.getOutPath();
+            const outPath = this.getOutPath(typePath);
             this.generateFiles(outPath);
             this.publish(outPath);
           }
