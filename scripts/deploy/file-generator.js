@@ -1,5 +1,5 @@
 const { readFileSync, writeFileSync } = require("fs");
-const { resolve, basename } = require("path");
+const { resolve, basename, join } = require("path");
 const template = require("lodash/template");
 const prettier = require("prettier");
 const flow = require("lodash/flow");
