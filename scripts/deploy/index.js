@@ -5,7 +5,7 @@ const { resolve } = require("path");
 
 new (class DeployManager {
   constructor() {
-    if (!process.env.RANGE) {
+    if (process.env.RANGE) {
       try {
         const typePaths = this.getTypePaths();
         if (typePaths.size) {
