@@ -1,5 +1,4 @@
 // General type definitions
-
 /// <reference types="node" />
 
 declare type int = number;

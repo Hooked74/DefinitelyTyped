@@ -3,7 +3,7 @@ const { resolve, basename, join } = require("path");
 const template = require("lodash/template");
 const prettier = require("prettier");
 const flow = require("lodash/flow");
-const { warn } = require("simple-output");
+const { warn, info } = require("simple-output");
 
 module.exports = class FileGenerator {
   constructor(outPath) {
