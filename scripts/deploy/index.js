@@ -14,7 +14,7 @@ new (class DeployManager {
           for (const typePath of typePaths) {
             const outPath = this.getOutPath(typePath);
             this.generateFiles(outPath);
-            console.log(execSync(`ls -al ${outPath}`));
+            console.log(execSync(`ls -al ${outPath}`).toString());
             console.log(process.env.NPM_TOKEN);
             console.log(readFileSync(`${outPath}/.npmrc`).toString());
             this.publish(outPath);
