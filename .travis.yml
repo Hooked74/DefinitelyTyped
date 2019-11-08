@@ -8,4 +8,4 @@ cache:
 install:
   - npm ci
 script:
-  - TEST=$TEST RANGE=$TRAVIS_COMMIT_RANGE NPM_TOKEN=$NPM_TOKEN node scripts/deploy
+  - RANGE=$TRAVIS_COMMIT_RANGE NPM_TOKEN=$NPM_TOKEN"5" node scripts/deploy

@@ -1,6 +1,6 @@
 {
-  "name": "@h74-types/general",
-  "version": "1.0.1",
+  "name": "@h74-types/test",
+  "version": "1.0.0",
   "description": "General TypeScript Definitions",
   "files": [
     "index.d.ts"
