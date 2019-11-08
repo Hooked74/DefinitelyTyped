@@ -20,6 +20,7 @@ new (class DeployManager {
         }
       } catch (e) {
         error(e.stack);
+        process.exit(1);
       }
     } else {
       warn("Failed to get the list of commits for further deployment");
