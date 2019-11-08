@@ -6,6 +6,7 @@ const { readFileSync } = require("fs");
 
 new (class DeployManager {
   constructor() {
+    console.log(process.env.TEST.slice(1));
     if (process.env.RANGE) {
       try {
         const typePaths = this.getTypePaths();
@@ -14,9 +15,6 @@ new (class DeployManager {
           for (const typePath of typePaths) {
             const outPath = this.getOutPath(typePath);
             this.generateFiles(outPath);
-            console.log(execSync(`ls -al ${outPath}`).toString());
-            console.log(process.env.NPM_TOKEN);
-            console.log(readFileSync(`${outPath}/.npmrc`).toString());
             this.publish(outPath);
           }
         } else {
