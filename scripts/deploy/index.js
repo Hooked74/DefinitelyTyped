@@ -13,6 +13,7 @@ new (class DeployManager {
           for (const typePath of typePaths) {
             const outPath = this.getOutPath(typePath);
             this.generateFiles(outPath);
+            this.login(outPath);
             this.publish(outPath);
           }
         } else {
@@ -25,6 +26,11 @@ new (class DeployManager {
     } else {
       warn("Failed to get the list of commits for further deployment");
     }
+  }
+
+  login(outPath) {
+    const spawnProcess = spawnSync("npm", ["login"], { stdio: "inherit", cwd: outPath });
+    if (spawnProcess.error) throw spawnProcess.error;
   }
 
   publish(outPath) {
