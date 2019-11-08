@@ -1,6 +1,6 @@
 {
   "name": "@h74-types/general",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "General TypeScript Definitions",
   "files": [
     "index.d.ts"
