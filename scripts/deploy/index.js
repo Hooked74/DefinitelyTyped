@@ -2,6 +2,7 @@ const { execSync, spawnSync } = require("child_process");
 const { warn, error, info } = require("simple-output");
 const FileGenerator = require("./file-generator");
 const { resolve } = require("path");
+const { readFileSync } = require("fs");
 
 new (class DeployManager {
   constructor() {
@@ -13,6 +14,9 @@ new (class DeployManager {
           for (const typePath of typePaths) {
             const outPath = this.getOutPath(typePath);
             this.generateFiles(outPath);
+            console.log(execSync(`ls -al ${outPath}`));
+            console.log(process.env.NPM_TOKEN);
+            console.log(readFileSync(`${outPath}/.npmrc`).toString());
             this.publish(outPath);
           }
         } else {
