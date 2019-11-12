@@ -1,6 +1,6 @@
 {
   "name": "@h74-types/general",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "General TypeScript Definitions",
   "files": [
     "index.d.ts"
@@ -25,5 +25,8 @@
   },
   "dependencies": {
     "@types/node": "*"
+  },
+  "scripts": {
+    "test": "node ../../scripts/test.js"
   }
 }
