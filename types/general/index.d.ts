@@ -14,10 +14,16 @@ declare type PickField<T, K extends keyof T> = T[K];
 declare type PromiseResolve = (value?: void | PromiseLike<void> | undefined) => void;
 declare type PromiseReject = (reason?: any) => void;
 
-declare type Constructor<T extends object> = T extends object ? new (...args: any[]) => T : never;
+declare type Constructor<T extends object> = new (...args: any[]) => T;
+declare type SafeConstructor<T extends object> = T extends object
+  ? new (...args: any[]) => T
+  : never;
 declare type Decorator<T extends object, U extends T> = (
   Component: Constructor<T>
 ) => Constructor<U>;
+declare type SafeDecorator<T extends object, U extends T> = (
+  Component: SafeConstructor<T>
+) => SafeConstructor<U>;
 
 declare type ReadonlyPartial<T> = { readonly [P in keyof T]?: T[P] };
 declare type Writable<T> = { -readonly [K in keyof T]: T[K] };
