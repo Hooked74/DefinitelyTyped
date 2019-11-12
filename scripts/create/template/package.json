@@ -1,0 +1,30 @@
+{
+  "name": "@h74-types/<%= package %>",
+  "version": "1.0.3",
+  "description": "TypeScript Definitions for <%= package %>",
+  "files": [
+    "index.d.ts"
+  ],
+  "author": "<%= author %>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "main": "",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hooked74/DefinitelyTyped.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hooked74/DefinitelyTyped/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "node ../../scripts/test.js"
+  }
+}
