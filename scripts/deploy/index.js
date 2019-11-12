@@ -1,8 +1,9 @@
-const { execSync, spawnSync } = require("child_process");
+const { execSync } = require("child_process");
 const { warn, error, info } = require("simple-output");
 const FileGenerator = require("./file-generator");
 const { resolve } = require("path");
 const { readFileSync } = require("fs");
+const testTypes = require("../test");
 
 new (class DeployManager {
   constructor() {
@@ -13,6 +14,8 @@ new (class DeployManager {
           info(`The following types were found: ${[...typePaths].join(", ")}`);
           for (const typePath of typePaths) {
             const outPath = this.getOutPath(typePath);
+            this.installDependencies(outPath);
+            testTypes(outPath, false);
             this.generateFiles(outPath);
             this.publish(outPath);
           }
@@ -28,9 +31,12 @@ new (class DeployManager {
     }
   }
 
+  installDependencies(outPath) {
+    execSync(`cd ${outPath} && npm install`, { stdio: "inherit", cwd: outPath });
+  }
+
   publish(outPath) {
-    const spawnProcess = spawnSync("npm", ["publish", outPath], { stdio: "inherit", cwd: outPath });
-    if (spawnProcess.error) throw spawnProcess.error;
+    execSync(`npm publish ${outPath}`, { stdio: "inherit", cwd: outPath });
   }
 
   generateFiles(outPath) {
