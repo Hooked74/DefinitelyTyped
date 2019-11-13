@@ -13,6 +13,8 @@ new (class DeployManager {
         if (typePaths.size) {
           info(`The following types were found: ${[...typePaths].join(", ")}`);
           for (const typePath of typePaths) {
+            console.log();
+            info(`Start deploying the "${typePath}" package`);
             const outPath = this.getOutPath(typePath);
             this.installDependencies(outPath);
             testTypes(outPath, false);
@@ -32,6 +34,7 @@ new (class DeployManager {
   }
 
   installDependencies(outPath) {
+    info("Start dependency installation");
     execSync(`cd ${outPath} && npm install`, { stdio: "inherit", cwd: outPath });
   }
 
