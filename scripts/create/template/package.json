@@ -1,6 +1,6 @@
 {
   "name": "@h74-types/<%= package %>",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "TypeScript Definitions for <%= package %>",
   "files": [
     "index.d.ts"
@@ -12,6 +12,7 @@
     "npm": ">=6"
   },
   "main": "",
+  "types": "index",
   "sideEffects": false,
   "repository": {
     "type": "git",

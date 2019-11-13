@@ -12,6 +12,7 @@
     "npm": ">=6"
   },
   "main": "",
+  "types": "index",
   "sideEffects": false,
   "repository": {
     "type": "git",
