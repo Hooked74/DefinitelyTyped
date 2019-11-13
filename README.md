@@ -11,6 +11,7 @@
 * [Make a pull request](#make-a-pull-request)
     * [Edit an existing package](#edit-an-existing-package)
     * [Create a new package](#create-a-new-package)
+    * [Package testing](#package-testing)
     * [Common mistakes](#common-mistakes)
     * [Removing a package](#removing-a-package)
 
