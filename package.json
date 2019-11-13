@@ -1,7 +1,7 @@
 {
   "name": "DefinitelyTyped",
   "version": "1.0.0",
-  "description": "",
+  "description": "The repository for high quality TypeScript type definitions",
   "main": "",
   "scripts": {
     "create": "node scripts/create"
@@ -10,8 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/Hooked74/DefinitelyTyped.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "typescript",
+    "d.ts",
+    "type",
+    "definition"
+  ],
+  "author": "Igor Novikov <novikovio74@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Hooked74/DefinitelyTyped/issues"
