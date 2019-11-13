@@ -8,6 +8,7 @@
     "strictFunctionTypes": true,
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmitOnError": false
+    "noEmitOnError": false,
+    "moduleResolution": "node"
   }
 }
