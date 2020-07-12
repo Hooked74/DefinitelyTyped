@@ -14,13 +14,11 @@ declare type PickField<T, K extends keyof T> = T[K];
 declare type PromiseResolve = (value?: void | PromiseLike<void> | undefined) => void;
 declare type PromiseReject = (reason?: any) => void;
 
-declare type Constructor<T extends object> = new (...args: any[]) => T;
+declare type Constructor<T> = new (...args: any[]) => T;
 declare type SafeConstructor<T extends object> = T extends object
   ? new (...args: any[]) => T
   : never;
-declare type Decorator<T extends object, U extends T> = (
-  Component: Constructor<T>
-) => Constructor<U>;
+declare type Decorator<T, U extends T> = (Component: Constructor<T>) => Constructor<U>;
 declare type SafeDecorator<T extends object, U extends T> = (
   Component: SafeConstructor<T>
 ) => SafeConstructor<U>;
@@ -50,6 +48,16 @@ declare namespace NodeJS {
 
   interface Global {}
 }
+
+declare type StringBrand<T, B extends string> = T & { readonly __brand: B };
+
+declare interface NonEmptyStringBrand {
+  readonly NonEmptyString: unique symbol; // ensures uniqueness across modules / packages
+}
+
+declare type NonEmptyString = string & NonEmptyStringBrand;
+
+declare type ConstructorType<T> = T extends new (...args: any[]) => infer P ? P : never;
 
 declare module "*.bmp" {
   const src: string;

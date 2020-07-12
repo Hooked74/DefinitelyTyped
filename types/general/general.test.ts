@@ -25,7 +25,7 @@ const SeasonDecorator: SafeDecorator<Season, { summer: int }> = <T extends objec
 type ReadonlyObject = ReadonlyPartial<{ field1: string; field2: string }>;
 
 const readonlyObject: ReadonlyObject = {
-  field1: "value"
+  field1: "value",
 };
 
 const writableObject: Writable<ReadonlyObject> = readonlyObject;
@@ -42,3 +42,10 @@ switch (process.env.NODE_ENV) {
   case "production":
   case "development":
 }
+
+const stringBrand: StringBrand<string, "brand"> = "someString" as StringBrand<string, "brand">;
+
+const nonEmptyStringBrand: NonEmptyString = "someString" as NonEmptyString;
+
+class SomeClass {}
+const someClass: ConstructorType<typeof SomeClass> = new SomeClass();
